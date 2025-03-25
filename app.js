@@ -15,10 +15,10 @@ app.use(bodyParser.json({ limit: '50mb' }));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(cors({
-  origin: ['https://web-frontend-snowy-seven.vercel.app'],
+  origin: true, // or specify exact origins
+  credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
 }));
 app.use('/api/user', userRouter);
 app.use('/api/product', productRouter);

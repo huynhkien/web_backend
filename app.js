@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(cors({
   origin: ['https://web-frontend-snowy-seven.vercel.app/'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
